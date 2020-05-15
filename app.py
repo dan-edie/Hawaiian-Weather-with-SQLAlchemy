@@ -146,6 +146,26 @@ def tobs():
 
     return jsonify(act_station)
 
+@app.route("/api/v1.0/<start_date>")
+def temp_range(start_date):
+    """Get the min, max, and avg temperature starting from a given date"""
+
+    # Create the link from Python to DB
+    session = Session(engine)
+
+    # format input from user
+    start_date = str(start_date)
+
+    '''Return the temp data starting at the given date'''
+    results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        filter(Measurement.date >= start_date).all()
+
+    session.close()
+
+    tstat_list = list(np.ravel(results))
+
+    return jsonify(tstat_list)
+
 @app.route("/api/v1.0/<start_date>/<stop_date>")
 def calc_temps(start_date, stop_date):
     """Fetch temp max, min, and avg in the date range provided by the user"""
