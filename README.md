@@ -1,13 +1,11 @@
-# sqlalchemy-challenge
-Project that uses SQL and SQLalchemy along with Pandas to perform data analysis
+# Hawaiian Weather with SQLAlchemy
 
-This project uses data from specific Hawaiian weather stations. A full year's worth of preciptation data is used to create
-a plot with Matplotlib. The top reporting stations are also pulled and identified. Temperature data is also examined
-and shown in a plot.
+This is a project that uses SQL and SQLAlchemy to perform data analysis.
 
-For extra work, data was queried and pulled to create a plot of normal temparatures over a specific period of time.
+This project uses data from specific NWS Hawaiian weather stations. A full years worth of preciptation data is extracted with SQLAlchemy and used to create
+plots with Matplotlib. The top reporting stations are pulled and identified, and temperature data is examined and shown in a plot.
 
-SQLalchemy is a great tool for accessing data and using Pandas to organize and present it.
+In addition, data was queried and pulled to create a plot of normal temparatures over a specified period of time.
 
 Next steps:
 - More projects that require querying data with SQLalchemy
